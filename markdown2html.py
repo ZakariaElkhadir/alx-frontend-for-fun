@@ -27,9 +27,10 @@ header = {
     "#####": lambda: f"<h5>{content_mark}</h5>",
     "######": lambda: f"<h6>{content_mark}</h6>",
 }
-for i in content:
-    # prob here
-    if i in header:
-        print(header[i]())
+for line in content:
+    # strip to remove trailing and whitespaces
+    line = line.strip()
+    if line in header:
+        print(header[line]())
 
 exit(0)
