@@ -17,8 +17,11 @@ if not os.path.isfile(markdown_file):
 with open(markdown_file, "r") as file:
     content = file.readlines()
 
+con = ''.join(content).replace('#', '')
 
-content_mark = "good"
+content_mark = str(con)
+
+
 header = {
     "#": lambda: f"<h1>{content_mark}</h1>",
     "##": lambda: f"<h2>{content_mark}</h2>",
