@@ -30,10 +30,9 @@ def parse_line(line):
     return line
 
 
-# Process each line using the parse_line function
 html_lines = [parse_line(line) for line in content]
 
-# Write the HTML output to the specified output file
+
 with open(output, "w") as html_file:
     html_file.write("\n".join(html_lines))
 
