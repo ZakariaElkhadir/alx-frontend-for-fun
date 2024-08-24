@@ -17,23 +17,20 @@ if not os.path.isfile(markdown_file):
 with open(markdown_file, "r") as file:
     content = file.readlines()
 
-con = ''.join(content).replace('#', '')
-
-content_mark = str(con)
-
-
-header = {
-    "#": lambda: f"<h1>{content_mark}</h1>",
-    "##": lambda: f"<h2>{content_mark}</h2>",
-    "###": lambda: f"<h3>{content_mark}</h3>",
-    "####": lambda: f"<h4>{content_mark}</h4>",
-    "#####": lambda: f"<h5>{content_mark}</h5>",
-    "######": lambda: f"<h6>{content_mark}</h6>",
-}
-for line in content:
-    # strip to remove trailing and whitespaces
+def parse_line(line):
     line = line.strip()
-    if line in header:
-        print(header[line]())
+    if line.startswith('#'):
+        heading_level = len(line) - len(line.lstrip('#'))
+        if 1 <= heading_level <= 6:
+            heading_content = line[heading_level:].strip()
+            return f"<h{heading_level}>{heading_content}</h{heading_level}>"
+    return line
+
+# Process each line using the parse_line function
+html_lines = [parse_line(line) for line in content]
+
+# Write the HTML output to the specified output file
+with open(output, "w") as html_file:
+    html_file.write("\n".join(html_lines))
 
 exit(0)
