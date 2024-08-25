@@ -3,7 +3,7 @@ import sys
 import os
 
 if len(sys.argv) < 3:
-    sys.stderr.write("Usage: ./markdown2html.py README.md README.html\n")
+    sys.stderr.write("Usage: ./markdown2html.py README.md README.html")
     sys.exit(1)
 
 input_file = sys.argv[1]
