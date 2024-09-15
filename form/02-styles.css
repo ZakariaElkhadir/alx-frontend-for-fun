@@ -652,7 +652,13 @@
     padding: 1rem 0;
     margin: 0;
   }
-
+  fieldset{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: none;
+    padding: 0 0 2rem;
+  }
   .tag-list li {
     display: inline;
   }
