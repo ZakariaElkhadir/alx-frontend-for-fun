@@ -1,10 +1,13 @@
 /* Reset margin and padding for body */
-body {
-  margin: 0;
-  padding: 0;
+$no-margin: 0;
+$no-padding: 0;
+$p-margin: 10px;
+.body {
+  margin: $no-margin;
+  padding: $no-padding;
 
   /* Nested declaration for p tags inside body */
-  p {
-    margin: 10px;
+  .p {
+    margin: $p-margin;
   }
 }
