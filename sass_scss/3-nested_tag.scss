@@ -1,10 +1,7 @@
 /* Reset margin and padding for body */
-
 .body {
   margin: 0;
   padding: 0;
-
-  /* Nested declaration for p tags inside body */
   .p {
     margin: 10px;
   }
