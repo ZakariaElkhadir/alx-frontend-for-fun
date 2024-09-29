@@ -1,0 +1,13 @@
+.message {
+    font-size: 12px;
+}
+.info, .success, .warning {
+    @extend .message;
+}
+.success {
+    color: #00FF00;
+}
+  
+  .warning {
+    color: #FF0000;
+}
