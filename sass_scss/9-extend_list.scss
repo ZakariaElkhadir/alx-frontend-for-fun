@@ -1,13 +1,14 @@
-.message {
+/*extended*/
+.info {
     font-size: 12px;
 }
-.info, .success, .warning {
-    @extend .message;
-}
+
 .success {
     color: #00FF00;
+    @extend .info;
 }
   
-  .warning {
+.warning {
     color: #FF0000;
+    @extend .info;
 }
