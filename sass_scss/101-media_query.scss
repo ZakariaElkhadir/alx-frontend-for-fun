@@ -1,0 +1,9 @@
+/*Media query #0*/
+h1 {
+    font-size: 20px;
+}
+@media (max-wdth: 320px) {
+    h1{
+        font-size: 14px;
+    }
+}
